@@ -1,0 +1,116 @@
+<!-- <div class="container">  
+<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">  
+<div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Sign Up</div>
+                        <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="javascript:void(0);" (click)="login()">Already have an account? click to Login</a></div>
+                    </div>      
+<div style="padding-top:30px" class="panel-body" >
+<form #regform="ngForm" (ngSubmit)="addUserDetails()" class="form-horizontal" >
+   
+        <div class="form-group">
+            <label for="u_name" class="col-md-3 control-label">User ID&nbsp;</label><br>
+            <div class="col-md-9">
+            <input class="form-control" type="text" id="custid" name="custid" minlength="4" maxlength="20" [(ngModel)]="reg.custid" #custid="ngModel" required></div>
+            <div class="error" *ngIf="custid.errors?.['minlength']">Username should be atleast 4 characters.</div>
+            <div class="error"  *ngIf="custid.touched && custid.invalid">Username is required.</div>
+            <br>
+        </div>
+
+        <div style="margin-bottom: 25px" class="input-group">
+        <label for="u_name" style="font-size: 20px;"><i class="fa fa-user-circle" aria-hidden="true"></i>Enter your Name&nbsp;</label><br>
+        <input class="form-control" type="text" id="u_name" name="user_name" minlength="4" maxlength="20" [(ngModel)]="reg.name" #user_name="ngModel" required>
+        <div class="error" *ngIf="user_name.errors?.['minlength']">Username should be atleast 4 characters.</div>
+        <div class="error"  *ngIf="user_name.touched && user_name.invalid">Username is required.</div>
+        <br>
+        </div>
+
+        <div style="margin-bottom: 25px" class="input-group">
+        <label for="u_pswd" style="font-size: 20px;"><i class="fa fa-key" aria-hidden="true"></i>Create Password&nbsp;</label><br>
+        <input class="form-control" type="password" id="u_pswd" name="pass_word" minlength="4" maxlength="20" [(ngModel)]="reg.password" #pass_word="ngModel" required>
+        <div class="error" *ngIf="pass_word.errors?.['minlength']">Password should be atleast 4 characters.</div>
+        <div class="error"  *ngIf="pass_word.touched && pass_word.invalid">Password is required.</div>
+        <br>
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+            <label for="u_name" style="font-size: 20px;"><i class="fa fa-user-circle" aria-hidden="true"></i>Enter your contact number&nbsp;</label><br>
+            <input class="form-control" type="text" id="cno" name="cno" minlength="8" maxlength="12" [(ngModel)]="reg.contactNumber" #cno="ngModel" required>
+            <div class="error" *ngIf="cno.errors?.['minlength']">Username should be atleast 4 characters.</div>
+            <div class="error"  *ngIf="cno.touched && cno.invalid">Username is required.</div>
+            <br>
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+            <label for="u_name" style="font-size: 20px;"><i class="fa fa-user-circle" aria-hidden="true"></i>Enter your Email ID&nbsp;</label><br>
+            <input class="form-control" type="text" id="email" name="email" minlength="4" maxlength="20" [(ngModel)]="reg.eMail" #email="ngModel" required>
+            <div class="error" *ngIf="email.errors?.['minlength']">Username should be atleast 4 characters.</div>
+            <div class="error"  *ngIf="email.touched && email.invalid">Username is required.</div>
+            <br>
+        </div>
+        
+        <button class="btn btn-primary" type="submit" [disabled]="regform.invalid">Register</button> 
+    
+</form> 
+</div>
+</div>
+</div> -->
+
+<div class="container">
+    <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Registration</div>
+                <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="javascript:void(0);" (click)="login()">Already have an Account? Sign In</a></div>
+            </div>  
+            <div class="panel-body" >
+                <form #regform="ngForm" (ngSubmit)="addUserDetails()" class="form-horizontal" role="form">
+                    <div id="signupalert" style="display:none" class="alert alert-danger">
+                        <p>Error:</p>
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="uid" class="col-md-3 control-label">User ID</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="custid" name="custid" placeholder="Create an ID" [(ngModel)]="reg.custid" #custid="ngModel" required>
+                        </div>
+                    </div>
+                        
+                    <div class="form-group">
+                        <label for="firstname" class="col-md-3 control-label">Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="u_name" name="user_name" placeholder="Enter Your Name" [(ngModel)]="reg.name" #user_name="ngModel" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-md-3 control-label">Password</label>
+                        <div class="col-md-9">
+                            <input type="password" class="form-control"  id="u_pswd" name="pass_word" placeholder="Create Password" [(ngModel)]="reg.password" #pass_word="ngModel" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname" class="col-md-3 control-label">Last Name</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="cno" name="cno" placeholder="Enter Your Contact Name" [(ngModel)]="reg.contactNumber" #cno="ngModel" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="icode" class="col-md-3 control-label">E-Mail</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your E-Mail" [(ngModel)]="reg.eMail" #email="ngModel" required>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <!-- Button -->                                        
+                        <div class="col-md-offset-3 col-md-9">
+                            <button id="btn-signup" type="submit" [disabled]="regform.invalid" (click)="showDiv.next=true" class="btn btn-info "><i class="icon-hand-right"></i>Sign Up</button>
+                            <div class="message" *ngIf="showDiv.next">Registration Successful. Login to continue</div>
+                        </div>
+                    </div>
+                </form>
+             </div>
+        </div>
+    
+    
+    
+    </div>
+    </div> 

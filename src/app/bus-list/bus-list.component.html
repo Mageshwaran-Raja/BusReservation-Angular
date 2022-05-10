@@ -1,0 +1,47 @@
+<!-- 
+<table class="table">
+    <tr *ngFor="let e of buses">
+        <td>{{ e.busNumber }}</td>
+        <td>{{ e.source }}</td>
+        <td>{{ e.destination }}</td>
+        <td>{{ e.departureDate }}</td>
+        <td>{{ e.travelType }}</td>
+        <td>{{ e.returnDate }}</td>
+        <td>{{ e.seatAvailable }}</td>
+    </tr>
+</table>  -->
+
+
+<h1 class="text-center">List of Buses Available</h1>
+<div class="d-flex justify-content-center">
+<!-- <div class="spinner-border" role="status" >
+    <span class="sr-only" id="loading">Loading...</span> 
+</div> -->
+</div>
+<table class="table table-striped" id='tab'>
+    <thead>
+    <tr>
+        <th scope="col">BusNumber</th>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <th scope="col">DepartureDate</th>
+        <th scope="col">TravelType</th>
+        <th scope="col">ReturnDate</th>
+        <th scope="col">SeatsAvailable</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let e of buses;">
+        <td>{{ e.busNumber }}</td>
+        <td>{{ e.source }}</td>
+        <td>{{ e.destination }}</td>
+        <td>{{ e.departureDate }}</td>
+        <td>{{ e.travelType }}</td>
+        <td>{{ e.returnDate }}</td>
+        <td>{{ e.seatAvailable }}</td>
+        <td><a href="javascript:void(0);" (click)="bookticket(e)">Book Ticket</a></td>
+    </tr>
+    </tbody>
+</table>    
+
+<button type="button" class="btn btn-primary">Logout</button>

@@ -1,0 +1,63 @@
+<p class="text-center">Update Bus Details</p>
+<div class="container">
+<table class="table">
+    <tr>
+        <td>Bus Number</td>
+        <td>
+            <input type="text" name="bsno" [disabled]="true" [(ngModel)]=addbus.busNumber  required #bsno="ngModel"/>
+            <div class="error" *ngIf="bsno.touched==true && bsno.invalid==true">Bus Number is Required</div>
+        </td>
+    </tr>
+    <tr>
+        <td>Source City</td>
+        <td>
+            <input type="text" name="s" [disabled]="true" [(ngModel)]=addbus.source required #s="ngModel"/>
+            <div class="error" *ngIf="s.touched==true && s.invalid==true">Name is Required</div>
+        </td>
+    </tr>
+    <tr>
+        <td>Destination City</td>
+        <td>
+            <input type="text" name="des" [disabled]="true" [(ngModel)]=addbus.destination required #des="ngModel"/>
+            <div class="error" *ngIf="des.touched==true && des.invalid==true">Name is Required</div>
+        </td>
+    </tr>
+    <tr>
+        <td>Update Departure Date</td>
+        <td>
+            <input type="date" name="ddate" [(ngModel)]=addbus.departureDate #ddate="ngModel"/>
+            <div class="error" *ngIf="ddate.touched==true && ddate.invalid==true">Date is Required</div>
+        </td>
+    </tr>
+    <tr>
+        <td>Update Type of Travel</td>
+        <td>
+            <input type="text" name="tt" [(ngModel)]=addbus.travelType required #tt="ngModel"/>
+            <div class="error" *ngIf="tt.touched==true && tt.invalid==true">Name is Required</div>
+        </td>
+    </tr>
+    <tr>
+        <td>Update Return/Destination Date</td>
+        <td>
+            <input type="date" name="rdate" [(ngModel)]=addbus.returnDate #rdate="ngModel"/>
+            <div class="error" *ngIf="rdate.touched==true && rdate.invalid==true">Date is Required</div>
+        </td>
+    </tr>
+    <tr>
+        <td>Update Seats</td>
+        <td>
+            <input type="text" name="ss" [(ngModel)]=addbus.seatAvailable required #ss="ngModel"/>
+            <div class="error" *ngIf="ss.touched==true && ss.invalid==true">Name is Required</div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <input type="submit" class="btn btn-warning" value="Update" (click)="updateBusDetails(); showDiv.next = true;" />
+            <!-- <input type="submit" name="b" (click)="showDiv.next = true" value="Test"/> -->
+            <br>
+            <div class="text-center" *ngIf="showDiv.next">Data is Updated</div>
+        </td>
+    </tr>
+</table>
+
+</div>

@@ -1,0 +1,41 @@
+
+<h1 class="text-center">E-Tickets</h1>
+<div class="d-flex justify-content-center">
+<!-- <div class="spinner-border" role="status" >
+    <span class="sr-only" id="loading">Loading...</span> 
+</div> -->
+</div>
+<table class="table table-striped" id='tab'>
+    <thead>
+    <tr>
+        <th scope="col">Customer ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">BusNumber</th>
+        <th scope="col">Departure Station</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Departure Date</th>
+        <th scope="col">Travel Type</th>
+        <th scope="col">Return Date</th>
+        <th scope="col">Payment Status</th>
+        <th scope="col">SeatsBooked</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ ticket.customerid }}</td>
+        <td>{{ ticket.name }}</td>
+        <td>{{ ticket.busNumber }}</td>
+        <td>{{ ticket.departureStation }}</td>
+        <td>{{ ticket.destination }}</td>
+        <td>{{ ticket.departureDate }}</td>
+        <td>{{ ticket.typeofTravel }}</td>
+        <td>{{ ticket.returnDate }}</td>
+        <td>{{ ticket.paymentStatus }}</td>
+        <td>{{ ticket.seatsBooked }}</td>
+        <td><Button class="btn btn-danger" (click)="cancelTicket()"  [disabled]="false">Cancel Ticket</Button></td>
+        <td><Button class="btn btn-primary" [disabled]="(ticket.paymentStatus=='paid')">Update Payment</Button></td>
+    </tr>
+    </tbody>
+</table>    
+
+<button type="button" class="btn btn-primary">Logout</button>
