@@ -1,4 +1,9 @@
-
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Cancellation Success!</strong> Your Refund will be Initiated in 3 Business Days.
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <h1 class="text-center">E-Tickets</h1>
 <div class="d-flex justify-content-center">
 <!-- <div class="spinner-border" role="status" >
@@ -21,7 +26,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
+    <tr *ngFor="let ticket of busticket;">
         <td>{{ ticket.customerid }}</td>
         <td>{{ ticket.name }}</td>
         <td>{{ ticket.busNumber }}</td>
@@ -32,10 +37,10 @@
         <td>{{ ticket.returnDate }}</td>
         <td>{{ ticket.paymentStatus }}</td>
         <td>{{ ticket.seatsBooked }}</td>
-        <td><Button class="btn btn-danger" (click)="cancelTicket()"  [disabled]="false">Cancel Ticket</Button></td>
-        <td><Button class="btn btn-primary" [disabled]="(ticket.paymentStatus=='paid')">Update Payment</Button></td>
+        <td><Button class="btn btn-danger" (click)="cancelTicket(ticket)"  [disabled]="false">Cancel Ticket</Button></td>
+        <td><Button class="btn btn-primary" (click)="updatePayment(ticket)" [disabled]="(ticket.paymentStatus=='paid')">Update Payment</Button></td>
     </tr>
     </tbody>
 </table>    
 
-<button type="button" class="btn btn-primary">Logout</button>
+<button [routerLink]="['../Dashboard']" type="button" class="btn btn-primary">Go Back</button>
